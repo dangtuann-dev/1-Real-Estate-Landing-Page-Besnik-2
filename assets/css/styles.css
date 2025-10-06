@@ -3,6 +3,7 @@
 }
 
 :root {
+    --actions-color: #0689ff;
     --primary-color: #0f1b4c;
     --secondary-color: #4f5361;
     --light-color: #e6f0ff;
@@ -20,7 +21,7 @@ html {
 }
 
 .action:hover {
-    text-decoration: underline #0689ff;
+    text-decoration: underline var(--actions-color);
 }
 
 html::-webkit-scrollbar {
@@ -45,7 +46,7 @@ a {
     border-radius: 0.8rem;
     background: var(--primary-color);
     /* Text */
-    color: #fff;
+    color: var(--white-color);
     text-align: center;
     font-size: 1.4rem;
     font-weight: 500;
@@ -59,7 +60,7 @@ a {
 /* common */
 
 .desc {
-    color: #687690;
+    color: var(--secondary-color);
     font-size: 1.8rem;
     font-weight: 500;
     letter-spacing: 0.018rem;
@@ -84,8 +85,9 @@ header {
     position: sticky;
     /* width: 100%; */
     top: 0;
-    background: #e6f0ff;
+    background: var(--light-color);
     height: 8vh;
+    z-index: 100;
 }
 
 .navbar {
@@ -99,7 +101,7 @@ header {
 }
 
 .navbar ul a {
-    color: #4f5361;
+    color: var(--secondary-color);
     font-size: 1.4rem;
     font-weight: 500;
     padding: 1.5rem 3rem;
@@ -249,14 +251,14 @@ header {
 }
 
 .work-item .heading {
-    color: #3b3c45;
+    color: var(--primary-color);
     font-size: 2rem;
     font-weight: 500;
     line-height: 2.2rem;
 }
 
 .work-item .action p {
-    color: #0689ff;
+    color: var(--actions-color);
     text-align: center;
     font-size: 1.4rem;
     font-weight: 600;
@@ -291,7 +293,7 @@ header {
 }
 
 .features-content .desc {
-    color: #5a6473;
+    color: var(--secondary-color);
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 3rem;
@@ -303,7 +305,7 @@ header {
 }
 
 .features-content .action p {
-    color: #0689ff;
+    color: var(--actions-color);
     font-size: 1.8rem;
     font-weight: 600;
 }
@@ -320,9 +322,9 @@ header {
 
 .features-item {
     display: inline-block;
-    background-color: #fff;
+    background-color: var(--white-color);
     border-radius: 1.2rem;
-    background: #fff;
+    background: var(--white-color);
     box-shadow: 0 65px 80px -46px rgba(226, 238, 249, 0.6);
 }
 
@@ -350,4 +352,237 @@ header {
 .data-item {
     display: flex;
     gap: 0.5rem;
+}
+
+
+/* stats */
+
+.stats {
+    margin-bottom: 5rem;
+}
+
+.stats-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7.5rem;
+    align-items: center;
+}
+
+.stats-image {
+    position: relative;
+    width: 60rem;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 1.2rem;
+}
+
+.stats-info-right .title {
+    position: relative;
+    width: 26.9rem;
+    flex-shrink: 0;
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 4.5rem;
+}
+
+.stats-info-right .title:before {
+    top: -1rem;
+    /* chỉnh vị trí lên trên tiêu đề một chút */
+    left: 0;
+    /* canh giữa theo chiều ngang */
+    /* transform: translateX(-50%); */
+    /* dịch ngược lại 1/2 chiều rộng */
+    content: "";
+    position: absolute;
+    width: 4.1rem;
+    height: 0.4rem;
+    flex-shrink: 0;
+    border-radius: 1.2rem;
+    background: #000339;
+}
+
+.stats-info-right .desc {
+    width: 30.9rem;
+    color: #5a6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+}
+
+.stats-info .card-of-image {
+    width: 23.9rem;
+    height: 25.2rem;
+    flex-shrink: 0;
+    border-radius: 0 0 1.2rem 1.2rem;
+    background: #fff;
+    box-shadow: 90px 85px 100px 0 rgba(0, 0, 0, 0.06);
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    z-index: 1;
+}
+
+.card-of-image .data-row {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 3.2rem 3.6rem 0; */
+}
+
+.card-of-image .data {
+    color: var(--primary-color);
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    /* 100% */
+    letter-spacing: 0.026rem;
+}
+
+.card-of-image .desc {
+    color: #a7a7a7;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    /* 150% */
+}
+
+.card-of-image .desc::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.1rem;
+    background: #e6e6e6;
+    margin-top: 1rem;
+}
+
+.stats-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats-data-item {
+    text-align: center;
+}
+
+.stats-data-item .data {
+    color: #000;
+    font-family: Poppins;
+    font-size: 6.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 6.4rem;
+    /* 100% */
+    margin-bottom: 2.2rem;
+}
+
+
+/* subscrible */
+
+.subscrible {
+    padding: 5.5rem 0;
+}
+
+.subscrible-content {
+    position: relative;
+    width: 111rem;
+    height: 40.9rem;
+    flex-shrink: 0;
+    border-radius: 2rem;
+    background: #063183;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8rem;
+}
+
+.subscrible-content .title {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+}
+
+.subscrible-content .desc {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.subscrible-content .btn {
+    width: 15.1rem;
+    height: 5rem;
+    flex-shrink: 0;
+    border-radius: 1.2rem;
+    background: #fff;
+    color: #002366;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.phone {
+    position: absolute;
+    bottom: 0;
+    right: 14rem;
+    width: 21.8083rem;
+    height: 43.8437rem;
+    flex-shrink: 0;
+}
+
+
+/* footer */
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-item .title {
+    color: #1c1c1d;
+    font-family: Lato;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 4.2rem;
+}
+
+.footer-item ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.footer-item li a,
+.touch-desc {
+    color: #7a7a7e;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.touch-desc {
+    width: 25.7rem;
+    margin: 4rem 0;
+}
+
+.footer-item li a:hover {
+    text-decoration: underline #7a7a7e;
+}
+
+.copy-right {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8.1rem;
+}
+
+.copy-right .desc {
+    color: #c2c2c2;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.footer-content {
+    margin-bottom: 5.8rem;
 }
