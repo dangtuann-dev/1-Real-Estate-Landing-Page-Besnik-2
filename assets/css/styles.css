@@ -1,7 +1,353 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0f1b4c;
+    --secondary-color: #4f5361;
+    --light-color: #e6f0ff;
+    --white-color: #ffffff;
+    --black-color: #000000;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE và Edge cũ */
+    scroll-behavior: smooth;
+}
+
+.action:hover {
+    text-decoration: underline #0689ff;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge mới */
+}
+
+body {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    /* Background */
+    padding: 1.5rem 3.7rem;
+    border-radius: 0.8rem;
+    background: var(--primary-color);
+    /* Text */
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
+/* common */
+
+.desc {
+    color: #687690;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.018rem;
+}
+
+.main-content {
+    width: 1110px;
+    max-width: calc(100% - 4.8rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* header */
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    position: sticky;
+    /* width: 100%; */
+    top: 0;
+    background: #e6f0ff;
+    height: 8vh;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    /* padding-top: 2rem; */
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul a {
+    color: #4f5361;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1.5rem 3rem;
+}
+
+.navbar ul a:hover,
+.navbar .action-link:hover {
+    text-decoration: underline;
+}
+
+.navbar .actions {
+    margin-left: auto;
+}
+
+.navbar .logo {
+    margin-right: 6.45rem;
+}
+
+.navbar .action-link {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-right: 1.8rem;
+}
+
+
+/* hero-info */
+
+.hero {
+    height: 91vh;
+    background: var(--light-color);
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-content .desc:last-of-type {
+    margin: 4rem 0;
+}
+
+.hero-content .title {
+    width: 56rem;
+    color: var(--primary-color);
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 7.6rem;
+}
+
+
+/* cilents */
+
+.cilents {
+    margin: 8rem 0;
+    padding: 4.3rem 0 2.3rem;
+}
+
+.star-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+}
+
+.star-list {
+    display: flex;
+    margin-right: 1.6rem;
+}
+
+.cilents-content .info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cilents-content .platforms-logo__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.cilents-content .platforms-logo__list a {
+    padding: 2rem 2.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.cilents-content .platforms-logo__list a:hover {
+    box-shadow: 0px -1px 17px -6px rgba(0, 0, 0, 0.62);
+    -webkit-box-shadow: 0px -1px 17px -6px rgba(0, 0, 0, 0.62);
+    -moz-box-shadow: 0px -1px 17px -6px rgba(0, 0, 0, 0.62);
+}
+
+
+/* works */
+
+.work-content .title {
+    position: relative;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.work-content .title::before {
+    top: -1rem;
+    /* chỉnh vị trí lên trên tiêu đề một chút */
+    left: 50%;
+    /* canh giữa theo chiều ngang */
+    transform: translateX(-50%);
+    /* dịch ngược lại 1/2 chiều rộng */
+    content: "";
+    position: absolute;
+    width: 4.1rem;
+    height: 0.4rem;
+    flex-shrink: 0;
+    border-radius: 1.2rem;
+    background: #000339;
+}
+
+.work-content .desc {
+    width: 46rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.works .work-list {
+    display: flex;
+    gap: 14rem;
+    justify-content: space-evenly;
+    margin: 7rem 0 6.5rem;
+}
+
+.work-item {
+    text-align: center;
+}
+
+.work-item .action {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.work-item .heading {
+    color: #3b3c45;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+}
+
+.work-item .action p {
+    color: #0689ff;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.works .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* features */
+
+.features {
+    background-color: #f5fafe;
+    padding: 11rem 0;
+    margin-top: 8rem;
+}
+
+.features-content .title {
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+}
+
+.features-content .desc-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.8rem;
+}
+
+.features-content .desc {
+    color: #5a6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+}
+
+.features-content .action {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.features-content .action p {
+    color: #0689ff;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+
+/* features list */
+
+.features-list {
+    display: flex;
+    gap: 3.2rem;
+    justify-content: space-between;
+    margin-top: 6.5rem;
+}
+
+.features-item {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 1.2rem;
+    background: #fff;
+    box-shadow: 0 65px 80px -46px rgba(226, 238, 249, 0.6);
+}
+
+.features-item .title {
+    color: #000339;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2rem;
+    margin: 1.7rem 2rem 1.1rem;
+}
+
+.features-item .desc {
+    color: #a3a6ab;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0 2rem 2rem;
+}
+
+.data-list {
+    display: flex;
+    gap: 2.2rem;
+    margin: 0 2rem 2rem;
+}
+
+.data-item {
+    display: flex;
+    gap: 0.5rem;
 }
